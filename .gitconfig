@@ -1,0 +1,16 @@
+[user]
+        name = killbasa
+        email = killbasab@gmail.com
+        signingkey = 77ECABD5D97CC3D6B99B85B327D1B9BA113EBE03
+[gpg]
+        program = /mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe
+[safe]
+        directory = *
+[core]
+        filemode = false
+[init]
+  		defaultBranch = main
+[color]
+		ui = true
+[alias]
+      	fa = !git fetch --all
