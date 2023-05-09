@@ -8,7 +8,7 @@ cd ~/.dotfiles
 2. Clone repo
 
 ```bash
-git clone https://github.com/killbasa/dotfiles.git ~/.dotfiles
+git clone https://github.com/killbasa/dotfiles.git .
 ```
 
 3. Install Homebrew
