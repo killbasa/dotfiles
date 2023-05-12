@@ -3,7 +3,7 @@
 function linkdotfile {
   file="$1"
   if [ ! -e ~/$file -a ! -L ~/$file ]; then
-      ln -s ~/.dotfiles/$file ~/$file
+      ln -sf ~/.dotfiles/$file ~/$file
   fi
 }
 
