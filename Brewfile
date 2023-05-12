@@ -18,6 +18,8 @@ brew "fzf"
 brew "hadolint"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf@3", link: true
+# Cross-shell prompt for astronauts
+brew "starship"
 # A new way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Kubernetes CLI To Manage Your Clusters In Style!

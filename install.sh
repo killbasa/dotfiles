@@ -12,7 +12,7 @@ function link_dotfile {
 
 if !(command -v brew > /dev/null); then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.profile
+  echo 'eval "$(/home/sammy/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
@@ -26,6 +26,7 @@ link_dotfile .editorconfig
 link_dotfile .gitconfig
 link_dotfile .config
 
+echo >&2
 echo "✓ Installation complete" >&2
 echo >&2
 echo "Run the following to change the shell to Fish:" >&2
