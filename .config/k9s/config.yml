@@ -24,9 +24,9 @@ k9s:
         active: all
         lockFavorites: false
         favorites:
-          - kube-system
-          - all
-          - default
+        - monitoring
+        - all
+        - default
       view:
         active: po
       featureGates:
