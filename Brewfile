@@ -1,7 +1,6 @@
 tap "bufbuild/buf"
 tap "derailed/k9s"
 tap "homebrew/bundle"
-tap "homebrew/core"
 # GNU compiler collection
 brew "gcc"
 # GitOps Continuous Delivery for Kubernetes
