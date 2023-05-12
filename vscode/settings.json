@@ -1,0 +1,28 @@
+{
+	"dotfiles.repository": "https://github.com/killbasa/dotfiles",
+	"dotfiles.installCommand": "~/.dotfiles/install.sh",
+	"dotfiles.targetPath": "~/.dotfiles",
+	"terminal.integrated.defaultProfile.linux": "fish",
+	"git.mergeEditor": true,
+	"eslint.format.enable": true,
+	"eslint.workingDirectories": [{ "mode": "auto" }],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"svelte.enable-ts-plugin": true,
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[proto3]": {
+		"editor.defaultFormatter": "bufbuild.vscode-buf"
+	},
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma"
+	}
+}

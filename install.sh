@@ -11,7 +11,7 @@ function linkdotfile {
   recho "Make sure you're in the ~/.dotfiles/ directory before running this"
 
 if !(command -v brew > /dev/null); then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 brew bundle
