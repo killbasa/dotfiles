@@ -8,14 +8,14 @@ function install_linuxbrew {
   BREW_PREFIX=${BREW_PREFIX:-"/home/linuxbrew/.linuxbrew"}
   USERNAME=${USERNAME:-"automatic"}
 
-  git clone https://github.com/Homebrew/brew "${BREW_PREFIX}/Homebrew"
-  mkdir -p "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew"
-  git clone https://github.com/Homebrew/homebrew-core "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew/homebrew-core"
+  sudo git clone https://github.com/Homebrew/brew "${BREW_PREFIX}/Homebrew"
+  sudo mkdir -p "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew"
+  sudo git clone https://github.com/Homebrew/homebrew-core "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew/homebrew-core"
 
   "${BREW_PREFIX}/Homebrew/bin/brew" config
-  mkdir "${BREW_PREFIX}/bin"
-  ln -s "${BREW_PREFIX}/Homebrew/bin/brew" "${BREW_PREFIX}/bin"
-  chown -R ${USERNAME} "${BREW_PREFIX}"
+  sudo mkdir "${BREW_PREFIX}/bin"
+  sudo ln -s "${BREW_PREFIX}/Homebrew/bin/brew" "${BREW_PREFIX}/bin"
+  sudo chown -R ${USERNAME} "${BREW_PREFIX}"
 }
 
 function rm_file {
