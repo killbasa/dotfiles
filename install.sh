@@ -2,6 +2,22 @@
 
 dotfiles_dir=~/dotfiles
 
+export DEBIAN_FRONTEND=noninteractive
+
+function install_linuxbrew {
+  BREW_PREFIX=${BREW_PREFIX:-"/home/linuxbrew/.linuxbrew"}
+  USERNAME=${USERNAME:-"automatic"}
+
+  git clone https://github.com/Homebrew/brew "${BREW_PREFIX}/Homebrew"
+  mkdir -p "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew"
+  git clone https://github.com/Homebrew/homebrew-core "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew/homebrew-core"
+
+  "${BREW_PREFIX}/Homebrew/bin/brew" config
+  mkdir "${BREW_PREFIX}/bin"
+  ln -s "${BREW_PREFIX}/Homebrew/bin/brew" "${BREW_PREFIX}/bin"
+  chown -R ${USERNAME} "${BREW_PREFIX}"
+}
+
 function rm_file {
   sudo rm -rf $HOME/$1 > /dev/null 2>&1
 }
@@ -11,12 +27,12 @@ function link_dotfile {
 }
 
 if !(command -v brew > /dev/null); then
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  install_linuxbrew
 fi
 
 brew bundle --verbose --file="$HOME/dotfiles/Brewfile"
+
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
 
 rm_file .editorconfig
 rm_file .gitconfig
