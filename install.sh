@@ -2,22 +2,6 @@
 
 dotfiles_dir=~/dotfiles
 
-export DEBIAN_FRONTEND=noninteractive
-
-function install_linuxbrew {
-  BREW_PREFIX=${BREW_PREFIX:-"/home/linuxbrew/.linuxbrew"}
-  USERNAME=${USERNAME:-"automatic"}
-
-  sudo git clone https://github.com/Homebrew/brew "${BREW_PREFIX}/Homebrew"
-  sudo mkdir -p "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew"
-  sudo git clone https://github.com/Homebrew/homebrew-core "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew/homebrew-core"
-
-  "${BREW_PREFIX}/Homebrew/bin/brew" config
-  sudo mkdir "${BREW_PREFIX}/bin"
-  sudo ln -s "${BREW_PREFIX}/Homebrew/bin/brew" "${BREW_PREFIX}/bin"
-  sudo chown -R ${USERNAME} "${BREW_PREFIX}"
-}
-
 function rm_file {
   sudo rm -rf $HOME/$1 > /dev/null 2>&1
 }
@@ -27,7 +11,10 @@ function link_dotfile {
 }
 
 if !(command -v brew > /dev/null); then
-  install_linuxbrew
+  git clone https://github.com/Homebrew/brew "${BREW_PREFIX}/Homebrew"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 brew bundle --verbose --file="$HOME/dotfiles/Brewfile"
