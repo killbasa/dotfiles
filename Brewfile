@@ -6,6 +6,12 @@ tap "homebrew/core"
 brew "gcc"
 # GitOps Continuous Delivery for Kubernetes
 brew "argocd"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Protocol buffers (Google's data interchange format)
