@@ -15,7 +15,15 @@ if !(command -v brew > /dev/null); then
   sudo apt-get install build-essential
 fi
 
-brew bundle --verbose
+brew install argocd
+brew install bat
+brew install fd
+brew install fish
+brew install fzf
+brew install hadolint
+brew install protobuf@3
+brew install bufbuild/buf/buf
+brew install derailed/k9s/k9s
 
 linkdotfile .editorconfig
 linkdotfile .gitconfig
