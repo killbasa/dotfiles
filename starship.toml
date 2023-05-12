@@ -1,5 +1,9 @@
 add_newline = false
 
+[kubernetes]
+symbol = "k8s "
+disabled = false
+
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
