@@ -9,8 +9,8 @@ function link_file {
 
 if ! command -v brew > /dev/null; then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
-  /home/linuxbrew/.linuxbrew/bin/brew shellenv
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' | tee -a $HOME/.profile $HOME/.bashrc >/dev/null
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 brew bundle --verbose --file="$HOME/dotfiles/Brewfile"
