@@ -2,9 +2,7 @@
 
 function linkdotfile {
   file="$1"
-  if [ ! -e ~/$file -a ! -L ~/$file ]; then
-      ln -sf ~/.dotfiles/$file ~/$file
-  fi
+  ln -sf ~/.dotfiles/$file ~/$file
 }
 
 [[ $(basename $(pwd)) == ".dotfiles" ]] ||
