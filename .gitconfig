@@ -1,7 +1,7 @@
 [user]
 	name = killbasa
 	email = killbasab@gmail.com
-	signingkey = 6214BC194B23CA68DEB858F5981FAFF30B85E149
+	signingkey = 981FAFF30B85E149
 [commit]
 	gpgsign = true
 [tag]
