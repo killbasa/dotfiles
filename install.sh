@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles_dir=~/dotfiles
+dotfiles_dir=~/.dotfiles
 
 function link_file {
   sudo rm -rf $HOME/$1 > /dev/null 2>&1
@@ -13,7 +13,7 @@ if ! command -v brew > /dev/null; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-brew bundle --verbose --file="$HOME/dotfiles/Brewfile"
+brew bundle --verbose --file="$dotfiles_dir/Brewfile"
 
 echo /usr/local/bin/fish | sudo tee -a /etc/shells >/dev/null
 
