@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles_dir=~/.dotfiles
+dotfiles_dir=~/dotfiles
 
 function link_file {
   sudo rm -rf $HOME/$1 > /dev/null 2>&1
