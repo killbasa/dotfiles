@@ -21,7 +21,7 @@ k9s:
   clusters:
     default:
       namespace:
-        active: all
+        active: default
         lockFavorites: false
         favorites:
         - monitoring

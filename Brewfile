@@ -16,6 +16,8 @@ brew "fish"
 brew "fzf"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf@3", link: true
 # Cross-shell prompt for astronauts
