@@ -5,8 +5,13 @@ alias dc="docker compose"
 # Kubernetes
 alias k="kubectl"
 
-# Misc
-alias reload="exec fish"
+# Volta
+alias v="volta"
 alias p="pnpm"
+
+# Misc
+alias r="exec fish"
+alias reload="exec fish"
 alias c="clear"
 alias cat="bat"
+alias de="direnv"

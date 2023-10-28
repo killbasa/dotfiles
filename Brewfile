@@ -8,6 +8,8 @@ brew "gcc"
 brew "argocd"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Load/unload environment variables based on $PWD
+brew "direnv"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems

@@ -15,12 +15,13 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Install Starship
 starship init fish | source
 
-# pnpm
-set -gx PNPM_HOME "/home/shane/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
-# bun
+# Setup direnv
+direnv hook fish | source
+
+# Setup Volta
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+# Setup Bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
