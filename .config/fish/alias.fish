@@ -1,3 +1,6 @@
+# apt
+alias au="sudo apt full-upgrade"
+
 # Docker
 alias d="docker"
 alias dc="docker compose"

@@ -15,9 +15,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Install Starship
 starship init fish | source
 
-# Setup direnv
-direnv hook fish | source
-
 # Setup Volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH

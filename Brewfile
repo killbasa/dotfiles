@@ -8,22 +8,26 @@ brew "gcc"
 brew "argocd"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Load/unload environment variables based on $PWD
-brew "direnv"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
+# Core utilities for Python packages
+brew "python-packaging"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf@3", link: true
 # Cross-shell prompt for astronauts
 brew "starship"
+# JavaScript toolchain manager for reproducible environments
+brew "volta"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # A new way of working with Protocol Buffers.
