@@ -15,7 +15,7 @@ fi
 
 brew bundle --verbose --file="$dotfiles_dir/Brewfile"
 
-echo /usr/local/bin/fish | sudo tee -a /etc/shells >/dev/null
+echo /usr/bin/fish | sudo tee -a /etc/shells >/dev/null
 
 link_file .editorconfig
 link_file .config
