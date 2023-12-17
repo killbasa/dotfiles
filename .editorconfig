@@ -8,6 +8,6 @@ trim_trailing_whitespace = true
 indent_size = 4
 indent_style = tab
 
-[*.{yml,toml,bash,sh,zsh}]
+[*.{yml,yaml,toml,bash,sh,zsh,fish}]
 indent_style = space
 indent_size = 2

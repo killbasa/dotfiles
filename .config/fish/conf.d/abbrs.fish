@@ -20,3 +20,7 @@ abbr --add y 'yarn'
 abbr --add c 'clear'
 abbr --add cat 'bat'
 abbr --add de 'direnv'
+abbr --add projects 'cd ~/projects'
+
+# Function abbreviations
+abbr --add r 'reload'

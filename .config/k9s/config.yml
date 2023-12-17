@@ -24,9 +24,9 @@ k9s:
         active: default
         lockFavorites: false
         favorites:
-        - monitoring
-        - all
-        - default
+          - monitoring
+          - all
+          - default
       view:
         active: po
       featureGates:

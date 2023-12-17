@@ -1,9 +1,12 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = false
 
 [kubernetes]
 symbol = "k8s "
 disabled = false
 
+# https://starship.rs/presets/plain-text.html#configuration
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
@@ -205,6 +208,9 @@ symbol = "scala "
 
 [spack]
 symbol = "spack "
+
+[solidity]
+symbol = "solidity "
 
 [status]
 symbol = "[x](bold red) "
