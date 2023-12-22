@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles_dir=~/dotfiles
+DOTFILES_DIR="~/dotfiles"
 
 . ./scripts/functions.sh
 
@@ -13,11 +13,11 @@ if ! command -v brew > /dev/null; then
 fi
 
 yellow "Installing packages"
-brew bundle --file="$dotfiles_dir/Brewfile"
+brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 # symlinks
 yellow "\nSymlinking dotfiles"
-symlink "$dotfiles_dir/.editorconfig" "$HOME/.editorconfig"
+symlink "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
 
 # Setup CLI - https://github.com/killbasa/cli
 if ! command -v kb > /dev/null; then
