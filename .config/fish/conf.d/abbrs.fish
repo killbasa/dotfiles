@@ -21,6 +21,7 @@ abbr --add c 'clear'
 abbr --add cat 'bat'
 abbr --add de 'direnv'
 abbr --add projects 'cd ~/projects'
+abbr --add n 'nvim'
 
 # Function abbreviations
 abbr --add r 'reload'
