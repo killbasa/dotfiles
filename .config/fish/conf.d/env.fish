@@ -2,6 +2,9 @@
 set -gx DOTFILES_REPO "https://github.com/killbasa/dotfiles"
 set -gx DOTFILES_HOME "$HOME/dotfiles"
 
+set -gx INFRA_REPO "https://github.com/killbasa/homelab"
+set -gx INFRA_HOME "$HOME/infra"
+
 # env
 set -gx TERM "xterm-256color"
 set -gx LC_ALL "en_US.UTF-8"

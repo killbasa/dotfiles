@@ -1,5 +1,6 @@
 # apt
 abbr --add au 'sudo apt full-upgrade'
+abbr --add upg 'sudo apt update && sudo apt upgrade'
 
 # git
 abbr --add g 'git'
@@ -22,6 +23,10 @@ abbr --add cat 'bat'
 abbr --add de 'direnv'
 abbr --add projects 'cd ~/projects'
 abbr --add n 'nvim'
+
+# Personal
+abbr --add kdo 'kb dotfiles open'
+abbr --add kio 'kb infra open'
 
 # Function abbreviations
 abbr --add r 'reload'
