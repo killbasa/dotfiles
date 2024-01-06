@@ -14,14 +14,8 @@ brew "fd"
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
-# Core utilities for Python packages
-brew "python-packaging"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf@3", link: true
 # Cross-shell prompt for astronauts
@@ -30,9 +24,10 @@ brew "starship"
 brew "volta"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
-# A new way of working with Protocol Buffers.
+# The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
+vscode "Command is only available in WSL or inside a Visual Studio Code terminal."

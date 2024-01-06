@@ -28,5 +28,9 @@ abbr --add n 'nvim'
 abbr --add kdo 'kb dotfiles open'
 abbr --add kio 'kb infra open'
 
+# Backups
+abbr --add bk_volta 'volta list --format plain > ~/dotfiles/volta/lockfile.txt'
+abbr --add bk_brew 'brew bundle dump --global --describe --file=~/dotfiles/Brewfile -f'
+
 # Function abbreviations
 abbr --add r 'reload'

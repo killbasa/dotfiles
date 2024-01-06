@@ -9,6 +9,7 @@ symlink() {
             echo "✕ Failed to remove existing file(s) at $2."
         fi
     fi
+
     if ln -s "$1" "$2"; then
         echo "✓ Symlinked $2 to $1."
     else

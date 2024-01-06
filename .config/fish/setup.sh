@@ -3,7 +3,7 @@
 DIR=$(dirname "$0")
 cd "$DIR"
 
-. ../../scripts/functions.sh
+source ../../scripts/functions.sh
 
 SOURCE="$(realpath .)"
 FISH_PATH="$(realpath ~/.config/fish)"
