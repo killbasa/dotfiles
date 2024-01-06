@@ -22,7 +22,7 @@ set -gx STARSHIP_CONFIG "$DOTFILES_HOME/.config/starship.toml"
 
 # linuxbrew
 if not contains /home/linuxbrew/.linuxbrew/bin $PATH
-  	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end
 
 # volta
