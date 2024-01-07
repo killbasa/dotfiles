@@ -38,5 +38,7 @@ set -gx CARGO_HOME "$HOME/.cargo"
 fish_add_path $CARGO_HOME/bin
 
 # go
+set -gx GOROOT "/usr/local/go"
 set -gx GOPATH "$HOME/go"
+fish_add_path $GOROOT/bin
 fish_add_path $GOPATH/bin
