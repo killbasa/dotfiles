@@ -1,3 +1,3 @@
 function backup --argument filename
-	cp $filename $filename.bak
+	cp -r $filename $filename.bak
 end

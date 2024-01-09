@@ -16,6 +16,8 @@ abbr --add k 'kubectl'
 abbr --add v 'volta'
 abbr --add p 'pnpm'
 abbr --add y 'yarn'
+abbr --add yu 'yarn upgrade-interactive'
+abbr --add ydd 'yarn dedupe --strategy highest'
 
 # Misc
 abbr --add c 'clear'
