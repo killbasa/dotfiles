@@ -32,7 +32,7 @@ abbr --add kio 'kb infra open'
 
 # Backups
 abbr --add bk_volta 'volta list --format plain > ~/dotfiles/volta/lockfile.txt'
-abbr --add bk_brew 'brew bundle dump --global --describe --file=~/dotfiles/Brewfile -f'
+abbr --add bk_brew 'brew bundle dump --global --describe --file=~/dotfiles/Brewfile -f && sed -i "/vscode /d" Brewfile'
 
 # Function abbreviations
 abbr --add r 'reload'

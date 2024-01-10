@@ -1,0 +1,28 @@
+## Style
+--max-columns=150
+--max-columns-preview
+--smart-case
+--column
+--no-ignore
+--hidden
+
+## Colors
+--colors=line:style:intense
+--colors=line:fg:172
+--colors=column:fg:136
+--colors=match:fg:202
+--colors=match:style:bold
+--colors=path:style:intense
+--colors=path:fg:142
+--colors=path:style:underline
+
+## Types
+--type-add
+web:*.{html,css,md,js}*
+
+--type-add
+text:*.{txt,text,md}*
+
+## Ignore
+
+--glob=!.git/*

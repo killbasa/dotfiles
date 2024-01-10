@@ -2,16 +2,10 @@
 
 set -eou pipefail
 
-DIR=$(dirname "$0")
-cd "$DIR"
+DOTFILES_DIR="$HOME/dotfiles"
+cd "$DOTFILES_DIR"
 
 source ./scripts/functions.sh
-
-# stow - https://www.gnu.org/software/stow/
-if ! command -v stow > /dev/null; then
-	echo "Installing stow"
-	sudo apt install stow
-fi
 
 # linuxbrew - https://docs.brew.sh/Homebrew-on-Linux
 if ! command -v brew > /dev/null; then
@@ -22,12 +16,12 @@ if ! command -v brew > /dev/null; then
 fi
 
 yellow "Installing packages"
-brew bundle --file="$DIR/Brewfile"
+brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 # symlinks
 yellow "\nSymlinking dotfiles"
-symlink "$DIR/.editorconfig" "$HOME/.editorconfig"
-symlink "$DIR/.config/nano/.nanorc" "$HOME/.nanorc"
+symlink "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
+symlink "$DOTFILES_DIR/.config/nano/.nanorc" "$HOME/.nanorc"
 
 # CLI - https://github.com/killbasa/cli
 if ! command -v kb > /dev/null; then
@@ -35,9 +29,9 @@ if ! command -v kb > /dev/null; then
 	curl -L -sSf https://raw.githubusercontent.com/killbasa/cli/main/install.sh | sh
 fi
 
-echo ""
+echo
 echo "✅ Dotfiles installed"
-echo ""
+echo
 echo "    Run the following to setup Fish:"
 echo "        bash ~/dotfiles/.config/fish/setup.sh"
-echo ""
+echo

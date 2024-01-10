@@ -17,8 +17,11 @@ set -gx GPG_TTY (tty)
 set -gx DOCKER_SCAN_SUGGEST false
 set -gx DOCKER_HIDE_LEGACY_COMMANDS 1
 
-# starship
+# starship - https://starship.rs/
 set -gx STARSHIP_CONFIG "$DOTFILES_HOME/.config/starship.toml"
+
+# ripgrep - https://github.com/BurntSushi/ripgrep
+set -gx RIPGREP_CONFIG_PATH "$DOTFILES_HOME/.config/ripgrep/.ripgreprc"
 
 # linuxbrew
 if not contains /home/linuxbrew/.linuxbrew/bin $PATH
