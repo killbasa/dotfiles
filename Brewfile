@@ -26,8 +26,6 @@ brew "ripgrep"
 brew "starship"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
-# Process YAML, JSON, XML, CSV and properties documents from the CLI
-brew "yq"
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Kubernetes CLI To Manage Your Clusters In Style!

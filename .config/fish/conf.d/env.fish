@@ -20,6 +20,9 @@ set -gx DOCKER_HIDE_LEGACY_COMMANDS 1
 # starship
 set -gx STARSHIP_CONFIG "$DOTFILES_HOME/.config/starship.toml"
 
+# bat
+set -gx BAT_CONFIG_PATH "$DOTFILES_HOME/.config/bat.conf"
+
 # ripgrep
 set -gx RIPGREP_CONFIG_PATH "$DOTFILES_HOME/.config/ripgrep.conf"
 
