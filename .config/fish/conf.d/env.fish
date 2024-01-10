@@ -14,8 +14,8 @@ set -gx EDITOR (type -p nano)
 set -gx GPG_TTY (tty)
 
 # docker
-set -gx DOCKER_SCAN_SUGGEST "false"
-set -gx DOTNET_CLI_TELEMETRY_OPTOUT "true"
+set -gx DOCKER_SCAN_SUGGEST false
+set -gx DOCKER_HIDE_LEGACY_COMMANDS 1
 
 # starship
 set -gx STARSHIP_CONFIG "$DOTFILES_HOME/.config/starship.toml"
@@ -24,21 +24,3 @@ set -gx STARSHIP_CONFIG "$DOTFILES_HOME/.config/starship.toml"
 if not contains /home/linuxbrew/.linuxbrew/bin $PATH
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end
-
-# volta
-set -gx VOLTA_HOME "$HOME/.volta"
-fish_add_path $VOLTA_HOME/bin
-
-# bun
-set -gx BUN_INSTALL "$HOME/.bun"
-fish_add_path $BUN_INSTALL/bin
-
-# rust
-set -gx CARGO_HOME "$HOME/.cargo"
-fish_add_path $CARGO_HOME/bin
-
-# go
-set -gx GOROOT "/usr/local/go"
-set -gx GOPATH "$HOME/go"
-fish_add_path $GOROOT/bin
-fish_add_path $GOPATH/bin

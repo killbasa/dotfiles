@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-YELLOW='\e[33m'
-NC='\e[39m'
+YELLOW="\e[33m"
+NC="\e[39m"
 
 symlink() {
 	if [ -e "$2" ] || [ -h "$2" ]; then

@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
-DOTFILES_DIR="$HOME/dotfiles"
+set -eou pipefail
+
+DIR=$(dirname "$0")
+cd "$DIR"
 
 source ./scripts/functions.sh
 
-# Install linuxbrew
+# stow - https://www.gnu.org/software/stow/
+if ! command -v stow > /dev/null; then
+	echo "Installing stow"
+	sudo apt install stow
+fi
+
+# linuxbrew - https://docs.brew.sh/Homebrew-on-Linux
 if ! command -v brew > /dev/null; then
 	echo "Installing Linuxbrew"
 	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -13,14 +22,14 @@ if ! command -v brew > /dev/null; then
 fi
 
 yellow "Installing packages"
-brew bundle --file="$DOTFILES_DIR/Brewfile"
+brew bundle --file="$DIR/Brewfile"
 
-# Symlinks
+# symlinks
 yellow "\nSymlinking dotfiles"
-symlink "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
-symlink "$DOTFILES_DIR/.config/nano/.nanorc" "$HOME/.nanorc"
+symlink "$DIR/.editorconfig" "$HOME/.editorconfig"
+symlink "$DIR/.config/nano/.nanorc" "$HOME/.nanorc"
 
-# Setup CLI - https://github.com/killbasa/cli
+# CLI - https://github.com/killbasa/cli
 if ! command -v kb > /dev/null; then
 	echo "Installing CLI"
 	curl -L -sSf https://raw.githubusercontent.com/killbasa/cli/main/install.sh | sh
