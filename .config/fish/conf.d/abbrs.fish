@@ -31,8 +31,11 @@ abbr --add kdo 'kb dotfiles open'
 abbr --add kio 'kb infra open'
 
 # Backups
-abbr --add bk_volta 'volta list --format plain > ~/dotfiles/volta/lockfile.txt'
-abbr --add bk_brew 'brew bundle dump --global --describe --file=~/dotfiles/Brewfile -f && sed -i "/vscode /d" Brewfile'
+abbr --add bk_volta 'volta list --format plain > $DOTFILES_HOME/volta/lockfile.txt'
+abbr --add bk_brew 'brew bundle dump --global --describe --file=$DOTFILES_HOME/Brewfile -f && sed -i "/vscode /d" $DOTFILES_HOME/Brewfile'
+
+# Syncs
+abbr --add sync_fish 'bash $DOTFILES_HOME/.config/fish/sync.sh'
 
 # Function abbreviations
 abbr --add r 'reload'

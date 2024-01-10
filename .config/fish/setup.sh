@@ -6,20 +6,7 @@ DIR=$(dirname "$0")
 cd "$DIR"
 
 source ../../scripts/functions.sh
-
-link_dirs() {
-	SOURCE="$(realpath .)"
-	FISH_PATH="$(realpath ~/.config/fish)"
-
-	mkdir -p "$FISH_PATH/functions"
-	mkdir -p "$FISH_PATH/conf.d"
-
-	find * -name "*fish*" | while read fn; do
-		symlink "$SOURCE/$fn" "$FISH_PATH/$fn"
-	done
-
-	clear_broken_symlinks "$FISH_PATH"
-}
+source ./sync.sh
 
 prepare_shell() {
 	if grep --quiet fish <<< "$SHELL"; then
@@ -47,6 +34,8 @@ prepare_shell() {
 	fi
 }
 
-link_dirs
+sync_dirs
 echo
 prepare_shell
+echo
+echo "Fish setup complete"
