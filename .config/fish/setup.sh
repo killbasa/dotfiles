@@ -34,8 +34,6 @@ prepare_shell() {
 	fi
 }
 
-sync_dirs
-echo
 prepare_shell
 echo
 echo "Fish setup complete"
