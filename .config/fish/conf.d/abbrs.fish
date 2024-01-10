@@ -22,7 +22,7 @@ abbr --add ydd 'yarn dedupe --strategy highest'
 # Misc
 abbr --add c 'clear'
 abbr --add cat 'bat'
-abbr --add de 'direnv'
+abbr --add pcat 'xargs bat'
 abbr --add projects 'cd ~/projects'
 abbr --add n 'nvim'
 
