@@ -15,5 +15,6 @@
 [color]
 	ui = true
 [alias]
-	fa = !git fetch --all
-	root = !git rev-parse --show-toplevel
+	fa 		= !git fetch --all
+	root 	= !git rev-parse --show-toplevel
+	visit 	= !git remote get-url origin | xargs -r open
