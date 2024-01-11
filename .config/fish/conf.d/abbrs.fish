@@ -35,7 +35,7 @@ abbr --add bk_volta 'volta list --format plain > $DOTFILES_HOME/volta/lockfile.t
 abbr --add bk_brew 'brew bundle dump --global --describe --file=$DOTFILES_HOME/Brewfile -f && sed -i "/vscode /d" $DOTFILES_HOME/Brewfile'
 
 # Syncs
-abbr --add sync_fish 'bash $DOTFILES_HOME/.config/fish/sync.sh'
+abbr --add dsync '$DOTFILES_HOME/scripts/stow-sync.sh'
 
 # Function abbreviations
 abbr --add r 'reload'

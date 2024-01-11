@@ -20,11 +20,7 @@ brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 # symlinks
 yellow "\nStowing dotfiles"
-
-mk_stow fish
-mk_stow git
-mk_stow k9s
-mk_stow nano
+source ./scripts/stow-sync.sh
 
 # CLI - https://github.com/killbasa/cli
 if ! command -v kb > /dev/null; then
@@ -36,5 +32,5 @@ echo
 echo "✅ Dotfiles installed"
 echo
 echo "    Run the following to setup Fish:"
-echo "        bash ~/dotfiles/scripts/fish-setup.sh"
+echo "        ~/dotfiles/fish.sh"
 echo

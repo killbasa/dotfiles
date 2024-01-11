@@ -23,13 +23,3 @@ clear_broken_symlinks() {
 		fi
 	done
 }
-
-mk_stow() {
-	mkdir -p "$XDG_CONFIG_HOME/$1"
-
-	if stow -d $DOTFILES_HOME/.config -t "$XDG_CONFIG_HOME/$1" "$1"; then
-		echo "Stowed $1 to $XDG_CONFIG_HOME/$1."
-	else
-		echo "✕ Failed to stow $1 to $XDG_CONFIG_HOME/$1."
-	fi
-}
