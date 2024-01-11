@@ -3,11 +3,13 @@
 STOW_DIRS="fish git k9s nano nvim"
 
 for PACKAGE in $STOW_DIRS; do
-	mkdir -p "$XDG_CONFIG_HOME/$PACKAGE"
+	TARGET==${XDG_CONFIG_HOME:-$HOME/.config}
 
-	if stow -R -d $DOTFILES_HOME/.config -t "$XDG_CONFIG_HOME/$PACKAGE" "$PACKAGE"; then
-		echo "Stowed $PACKAGE to $XDG_CONFIG_HOME/$PACKAGE."
+	mkdir -p "$TARGET/$PACKAGE"
+
+	if stow -R -d $DOTFILES_HOME/.config -t "$TARGET/$PACKAGE" "$PACKAGE"; then
+		echo "Stowed $PACKAGE to $TARGET/$PACKAGE."
 	else
-		echo "✕ Failed to stow $PACKAGE to $XDG_CONFIG_HOME/$PACKAGE."
+		echo "✕ Failed to stow $PACKAGE to $TARGET/$PACKAGE."
 	fi
 done
