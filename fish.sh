@@ -31,3 +31,4 @@ else
 fi
 
 echo "Fish setup complete"
+echo "You may need to restart your terminal to detect the changes"
