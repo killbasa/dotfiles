@@ -24,6 +24,8 @@ brew "protobuf@3", link: true
 brew "ripgrep"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
 # The best way of working with Protocol Buffers.

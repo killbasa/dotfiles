@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-YELLOW="\e[33m"
-NC="\e[39m"
-
 symlink() {
 	if [ -e "$2" ] || [ -h "$2" ]; then
 		if ! rm -r "$2"; then
@@ -27,7 +24,12 @@ clear_broken_symlinks() {
 	done
 }
 
-yellow() {
-	local message="$1"
-	echo -e "${YELLOW}$message${NC}"
+mk_stow() {
+	mkdir -p "$XDG_CONFIG_HOME/$1"
+
+	if stow -d $DOTFILES_HOME/.config -t "$XDG_CONFIG_HOME/$1" "$1"; then
+		echo "Stowed $1 to $XDG_CONFIG_HOME/$1."
+	else
+		echo "✕ Failed to stow $1 to $XDG_CONFIG_HOME/$1."
+	fi
 }

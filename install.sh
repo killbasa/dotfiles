@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 set -eou pipefail
-
 DOTFILES_DIR="$HOME/dotfiles"
 cd "$DOTFILES_DIR"
 
+source ./scripts/colors.sh
 source ./scripts/functions.sh
 
 # linuxbrew - https://docs.brew.sh/Homebrew-on-Linux
@@ -19,9 +19,12 @@ yellow "Installing packages"
 brew bundle --file="$DOTFILES_DIR/Brewfile"
 
 # symlinks
-yellow "\nSymlinking dotfiles"
-symlink "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
-symlink "$DOTFILES_DIR/.config/nano/.nanorc" "$HOME/.nanorc"
+yellow "\nStowing dotfiles"
+
+mk_stow fish
+mk_stow git
+mk_stow k9s
+mk_stow nano
 
 # CLI - https://github.com/killbasa/cli
 if ! command -v kb > /dev/null; then
@@ -33,5 +36,5 @@ echo
 echo "✅ Dotfiles installed"
 echo
 echo "    Run the following to setup Fish:"
-echo "        bash ~/dotfiles/.config/fish/setup.sh"
+echo "        bash ~/dotfiles/scripts/fish-setup.sh"
 echo

@@ -13,6 +13,12 @@ set -gx LANGUAGE "en_US.UTF-8"
 set -gx EDITOR (type -p nano)
 set -gx GPG_TTY (tty)
 
+## https://wiki.archlinux.org/title/XDG_Base_Directory
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_STATE_HOME "$HOME/.local/state"
+
 # docker
 set -gx DOCKER_SCAN_SUGGEST false
 set -gx DOCKER_HIDE_LEGACY_COMMANDS 1
