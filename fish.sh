@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -eou pipefail
-cd "$DOTFILES_HOME"
+cd "$HOME/dotfiles"
 
 source ./scripts/colors.sh
 source ./scripts/functions.sh
