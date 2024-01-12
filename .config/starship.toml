@@ -23,9 +23,9 @@ add_newline = false
 
 ## Theme ##
 
-palette = 'kb'
+palette = 'super'
 
-[palettes.kb]
+[palettes.super]
 color_1 = "#252a36"
 color_2 = "#34444f"
 color_3 = "#425563"

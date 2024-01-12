@@ -6,7 +6,7 @@ function theme
 		return
 	end
 
-	set TARGET_THEME "$DOTFILES_HOME/.config/starship_themes/$argv.toml"
+	set TARGET_THEME "$DOTFILES_HOME/.config/starship/$argv.toml"
 
 	if test -e "$TARGET_THEME"
 		cat "$TARGET_THEME" | tee "$DOTFILES_HOME/.config/starship.toml" >/dev/null

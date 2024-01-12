@@ -6,6 +6,10 @@ add_newline = false
 
 ## Theme ##
 
+palette = 'text'
+
+[palettes.text]
+
 ## General ##
 
 [character]
