@@ -8,6 +8,8 @@
 	gpgsign = true
 [safe]
 	directory = *
+[merge]
+	conflictstyle = diff3
 [core]
 	filemode = false
 [init]
