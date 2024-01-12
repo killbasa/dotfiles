@@ -1,0 +1,11 @@
+# https://starship.rs/
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+## Theme ##
+
+## General ##
+
+## Git ##
+
+## Languages ##
