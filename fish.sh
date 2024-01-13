@@ -4,7 +4,17 @@ set -eou pipefail
 cd "$HOME/dotfiles"
 
 source ./scripts/colors.sh
-source ./scripts/functions.sh
+
+yellow "Setting up fish shell"
+
+if ! test -e "./.config/fish/conf.d/local.fish"; then
+	cat << EOF > "./.config/fish/conf.d/local.fish"
+## Powerline ##
+# weather
+set -gx TMUX_POWERLINE_SEG_WEATHER_LAT ""
+set -gx TMUX_POWERLINE_SEG_WEATHER_LON ""
+EOF
+fi
 
 if grep --quiet fish <<< "$SHELL"; then
 	echo "Fish shell is already set up"
@@ -31,4 +41,3 @@ else
 fi
 
 echo "Fish setup complete"
-echo "You may need to restart your terminal to detect the changes"

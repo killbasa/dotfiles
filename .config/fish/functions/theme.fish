@@ -1,16 +1,23 @@
 function theme
 	set THEMES "super" "text"
+	set TARGET_THEME $argv[1]
 
-	if not contains $argv $THEMES
-		echo "Invalid theme name, available themes: $THEMES"
+	if not contains $TARGET_THEME $THEMES
+		echo "invalid theme name, available themes: $THEMES"
 		return
 	end
 
-	set TARGET_THEME "$DOTFILES_HOME/.config/starship/$argv.toml"
-
-	if test -e "$TARGET_THEME"
-		cat "$TARGET_THEME" | tee "$DOTFILES_HOME/.config/starship.toml" >/dev/null
+	set STARSHIP_THEME "$DOTFILES_HOME/.config/starship/$TARGET_THEME.toml"
+	if test -e "$STARSHIP_THEME"
+		cat "$STARSHIP_THEME" | tee "$DOTFILES_HOME/.config/starship.toml" >/dev/null
 	else
-		echo "Theme $argv not found"
+		echo "starship theme \"$TARGET_THEME\" not found"
+	end
+
+	set TMUX_THEME "$DOTFILES_HOME/.config/tmux-powerline/themes/$TARGET_THEME.sh"
+	if test -e "$TMUX_THEME"
+		set -gx TMUX_POWERLINE_THEME "$TARGET_THEME"
+	else
+		echo "tmux theme \"$TARGET_THEME\" not found"
 	end
 end

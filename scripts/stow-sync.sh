@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STOW_DIRS="fish git k9s nano nvim tmux"
+STOW_DIRS="fish git k9s nano nvim tmux tmux-powerline"
 
 for PACKAGE in $STOW_DIRS; do
 	TARGET=${XDG_CONFIG_HOME:-$HOME/.config}

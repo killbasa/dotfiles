@@ -5,7 +5,6 @@ DOTFILES_DIR="$HOME/dotfiles"
 cd "$DOTFILES_DIR"
 
 source ./scripts/colors.sh
-source ./scripts/functions.sh
 
 # linuxbrew - https://docs.brew.sh/Homebrew-on-Linux
 if ! command -v brew > /dev/null; then
