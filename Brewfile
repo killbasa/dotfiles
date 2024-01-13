@@ -14,8 +14,6 @@ brew "fd"
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU compiler collection
-brew "gcc"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Protocol buffers (Google's data interchange format)
@@ -28,6 +26,8 @@ brew "starship"
 brew "stow"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
+# Command-line client for WebSockets
+brew "websocat"
 # The best way of working with Protocol Buffers.
 brew "bufbuild/buf/buf"
 # Kubernetes CLI To Manage Your Clusters In Style!

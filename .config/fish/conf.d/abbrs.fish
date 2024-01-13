@@ -25,6 +25,7 @@ abbr --add cat 'bat'
 abbr --add pcat 'xargs bat'
 abbr --add projects 'cd ~/projects'
 abbr --add n 'nvim'
+abbr --add ws 'websocat'
 
 # Personal
 abbr --add kdo 'kb dotfiles open'
@@ -32,7 +33,8 @@ abbr --add kio 'kb infra open'
 
 # Backups
 abbr --add bk_volta 'volta list --format plain > $DOTFILES_HOME/volta/lockfile.txt'
-abbr --add bk_brew 'brew bundle dump --global --describe --file=$DOTFILES_HOME/Brewfile -f && sed -i "/vscode /d" $DOTFILES_HOME/Brewfile'
+abbr --add bk_brew 'brew bundle dump --global --describe --file=$DOTFILES_HOME/Brewfile --force && \
+	sed -i "/vscode /d" $DOTFILES_HOME/Brewfile'
 
 # Syncs
 abbr --add dsync '$DOTFILES_HOME/scripts/stow-sync.sh'

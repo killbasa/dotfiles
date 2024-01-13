@@ -16,7 +16,7 @@ if ! command -v brew > /dev/null; then
 fi
 
 yellow "Installing packages"
-brew bundle --file="$DOTFILES_DIR/Brewfile"
+brew bundle install --file="$DOTFILES_DIR/Brewfile"
 
 # symlinks
 yellow "\nStowing dotfiles"
