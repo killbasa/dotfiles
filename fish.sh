@@ -9,8 +9,12 @@ yellow "Setting up fish shell"
 
 if ! test -e "./.config/fish/conf.d/local.fish"; then
 	cat << EOF > "./.config/fish/conf.d/local.fish"
+## tmux ##
+# don't run tmux on startup (1 = true, 0 = false)
+set -gx DISABLE_TMUX_INIT 1
+
 ## Powerline ##
-# weather
+# weather segment (https://www.latlong.net/)
 set -gx TMUX_POWERLINE_SEG_WEATHER_LAT ""
 set -gx TMUX_POWERLINE_SEG_WEATHER_LON ""
 EOF
