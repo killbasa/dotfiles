@@ -9,12 +9,12 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:color_2 bg:color_3)\
-[ $bun\
+[$bun\
 $c\
 $dotnet\
 $golang\
 $nodejs\
-$rust $package](fg:color_brand bg:color_3)\
+$rust$package](fg:color_brand bg:color_3)\
 [](fg:color_3)\
 $line_break\
 $character"""
@@ -87,4 +87,4 @@ symbol = "rs "
 format = "$symbol$version"
 
 [package]
-format = "\\($version\\)"
+format = " \\($version\\) "
