@@ -9,13 +9,13 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:color_2 bg:color_3)\
-$bun\
+[ $bun\
 $c\
 $dotnet\
 $golang\
 $nodejs\
-$rust\
-[](color_3)\
+$rust $package](fg:color_brand bg:color_3)\
+[](fg:color_3)\
 $line_break\
 $character"""
 
@@ -64,30 +64,27 @@ deleted = "x"
 
 [bun]
 symbol = "bun "
-format = "[ $symbol($version) ]($style)"
-style = "fg:color_brand bg:color_3"
+format = "$symbol$version"
 
 [c]
 symbol = "C "
-format = "[ $symbol($version) ]($style)"
-style = "fg:color_brand bg:color_3"
+format = "$symbol$version"
 
 [dotnet]
 symbol = ".NET "
-format = "[ $symbol($version) ]($style)"
-style = "fg:color_brand bg:color_3"
+format = "$symbol$version"
 
 [golang]
 symbol = "go "
-format = "[ $symbol($version) ]($style)"
-style = "fg:color_brand bg:color_3"
+format = "$symbol$version"
 
 [nodejs]
 symbol = "nodejs "
-format = "[ $symbol($version) ]($style)"
-style = "fg:color_brand bg:color_3"
+format = "$symbol$version"
 
 [rust]
 symbol = "rs "
-format = "[ $symbol($version) ]($style)"
-style = "fg:color_brand bg:color_3"
+format = "$symbol$version"
+
+[package]
+format = "\\($version\\)"
