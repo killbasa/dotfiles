@@ -9,8 +9,7 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:color_2 bg:color_3)\
-[$bun\
-$c\
+[$c\
 $dotnet\
 $golang\
 $nodejs\
@@ -62,29 +61,25 @@ deleted = "x"
 
 ## Languages ##
 
-[bun]
-symbol = "bun "
-format = "$symbol$version"
-
 [c]
 symbol = "C "
-format = "$symbol$version"
+format = " $symbol$version "
 
 [dotnet]
 symbol = ".NET "
-format = "$symbol$version"
+format = " $symbol$version "
 
 [golang]
 symbol = "go "
-format = "$symbol$version"
+format = " $symbol$version "
 
 [nodejs]
 symbol = "nodejs "
-format = "$symbol$version"
+format = " $symbol$version "
 
 [rust]
 symbol = "rs "
-format = "$symbol$version"
+format = " $symbol$version "
 
 [package]
-format = " \\($version\\) "
+format = "\\($version\\) "
