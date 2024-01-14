@@ -66,7 +66,7 @@ fi
 
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
-		"weather ${color_2} ${color_brand}" \
+		"weather_custom ${color_2} ${color_brand}" \
 		"date_day_full ${color_2} ${color_brand} ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 		"date ${color_2} ${color_brand} ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 		"time ${color_2} ${color_brand} ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \

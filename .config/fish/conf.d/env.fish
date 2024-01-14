@@ -19,6 +19,9 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
+# tmux
+set -gx TMUX_POWERLINE_THEME "super"
+
 # docker
 set -gx DOCKER_SCAN_SUGGEST false
 set -gx DOCKER_HIDE_LEGACY_COMMANDS 1
