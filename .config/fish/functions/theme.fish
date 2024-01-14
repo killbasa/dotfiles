@@ -16,7 +16,11 @@ function theme
 
 	set TMUX_THEME "$DOTFILES_HOME/.config/tmux-powerline/themes/$TARGET_THEME.sh"
 	if test -e "$TMUX_THEME"
-		set -gx TMUX_POWERLINE_THEME "$TARGET_THEME"
+		echo "$TARGET_THEME" | tee "$DOTFILES_HOME/.config/tmux-powerline/.theme" >/dev/null
+
+		if set -q TMUX
+			bash "$DOTFILES_HOME/scripts/reload-theme.sh" "$TARGET_THEME"
+		end
 	else
 		echo "tmux theme \"$TARGET_THEME\" not found"
 	end

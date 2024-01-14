@@ -2,7 +2,7 @@ run_segment() {
 	__process_settings
 
 	local tmp_file="${TMUX_POWERLINE_DIR_TEMPORARY}/temp_weather_file.txt"
-	local weather=$(__yrno)
+	local weather=$(__metno)
 
 	if [ -n "$weather" ]; then
 		echo "$weather"
@@ -22,34 +22,37 @@ __process_settings() {
 	fi
 }
 
-__yrno() {
-	degree=""
+__metno() {
+	# 1 = true, 0 = false
+	local debug_segment=0
+	local degree=""
 
-	if [ -f "$tmp_file" ]; then
+	if [ -f "$tmp_file" ] && [ $debug_segment -eq 0 ]; then
 		if shell_is_osx || shell_is_bsd; then
 			last_update=$(stat -f "%m" ${tmp_file})
 		elif shell_is_linux; then
 			last_update=$(stat -c "%Y" ${tmp_file})
 		fi
-		time_now=$(date +%s)
 
-		up_to_date=$(echo "(${time_now}-${last_update}) < 600" | bc)
+		up_to_date=$(echo "($(date +%s)-${last_update}) < 600" | bc)
 		if [ "$up_to_date" -eq 1 ]; then
 			__read_tmp_file
 		fi
 	fi
 
 	if [ -z "$degree" ]; then
-		weather_data=$(curl --max-time 4 -s "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${TMUX_POWERLINE_SEG_WEATHER_LAT}&lon=${TMUX_POWERLINE_SEG_WEATHER_LON}")
+		weather_data=$(curl \
+			--max-time 4 \
+			-s \
+			"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${TMUX_POWERLINE_SEG_WEATHER_LAT}&lon=${TMUX_POWERLINE_SEG_WEATHER_LON}" \
+		)
 		if [ "$?" -eq "0" ]; then
-			grep=$TMUX_POWERLINE_SEG_WEATHER_GREP
-			error=$(echo "$weather_data" | $grep -i "error");
+			error=$(echo "$weather_data" | $TMUX_POWERLINE_SEG_WEATHER_GREP -i "error");
 			if [ -n "$error" ]; then
 				echo "error"
 				exit 1
 			fi
 
-			unit=$(echo "$weather_data" | jq -r .properties.meta.units.air_temperature)
 			degree=$(echo "$weather_data" | jq -r .properties.timeseries[0].data.instant.details.air_temperature)
 			condition=$(echo "$weather_data" | jq -r .properties.timeseries[0].data.next_1_hours.summary.symbol_code)
 		elif [ -f "${tmp_file}" ]; then
@@ -58,55 +61,34 @@ __yrno() {
 	fi
 
 	if [ -n "$degree" ]; then
-		condition_symbol=$(__get_yrno_condition_symbol "$condition")
-	    echo "${condition_symbol} ${degree}°$(echo "c" | tr '[:lower:]' '[:upper:]')" | tee "${tmp_file}"
+		symbol=$(__get_metno_condition_symbol "$condition")
+	    echo "$symbol ${degree}°C" | tee "${tmp_file}"
 	fi
 }
 
-__get_yrno_condition_symbol() {
+__get_metno_condition_symbol() {
 	local condition=$1
 	case "$condition" in
-		"clearsky_day")
-			echo "☀ "
-			;;
-		"clearsky_night")
-			echo "🌙"
-			;;
-		"fair_day")
-			echo "🌤 "
-			;;
-		"fair_night")
-			echo "🌜"
-			;;
 		"fog")
-			echo "🌫 "
+			echo "Foggy"
 			;;
-		"cloudy")
-			echo "☁ "
+		"clearsky_day" | "clearsky_night")
+			echo "Clear"
 			;;
-		"rain" | "lightrain" | "heavyrain" | "sleet" | "lightsleet" | "heavysleet")
-			echo "🌧 "
+		"fair_day" | "fair_night")
+			echo "Fair"
+			;;
+		"cloudy" | "partlycloudy_day" | "partlycloudy_night")
+			echo "Cloudy"
+			;;
+		"snow" | "lightsnow" | "heavysnow" | "lightsnowshowers_day" | "lightsnowshowers_night" | "heavysnowshowers_day" | "heavysnowshowers_night" | "snowshowers_day" | "snowshowers_night")
+			echo "Snowy"
+			;;
+		"rain" | "lightrain" | "heavyrain" | "sleet" | "lightsleet" | "heavysleet" | "heavyrainshowers_night" | "heavysleetshowers_night" | "lightrainshowers_night" | "lightsleetshowers_night" | "rainshowers_night" | "sleetshowers_night" | "heavyrainshowers_day" | "heavysleetshowers_day" | "heavysleetshowersandthunder_night" | "lightrainshowers_day" | "lightsleetshowers_day" | "rainshowers_day" | "sleetshowers_day")
+			echo "Rainy"
 			;;
 		"heavyrainandthunder" | "heavyrainshowersandthunder_day" | "heavyrainshowersandthunder_night" | "heavysleetandthunder" | "heavysleetshowersandthunder_day" | "heavysnowandthunder" | "heavysnowshowersandthunder_day" | "heavysnowshowersandthunder_night" | "lightrainandthunder" | "lightrainshowersandthunder_day" | "lightrainshowersandthunder_night" | "lightsleetandthunder" | "lightsnowandthunder" | "lightssleetshowersandthunder_day" | "lightssleetshowersandthunder_night" | "lightssnowshowersandthunder_day" | "lightssnowshowersandthunder_night" | "rainandthunder" | "rainshowersandthunder_day" | "rainshowersandthunder_night" | "sleetandthunder" | "sleetshowersandthunder_day" | "sleetshowersandthunder_night" | "snowandthunder" | "snowshowersandthunder_day" | "snowshowersandthunder_night")
-			echo "⛈ "
-			;;
-		"heavyrainshowers_day" | "heavysleetshowers_day" | "heavysleetshowersandthunder_night" | "lightrainshowers_day" | "lightsleetshowers_day" | "rainshowers_day" | "sleetshowers_day")
-			echo "🌦 "
-			;;
-    	"heavyrainshowers_night" | "heavysleetshowers_night" | "lightrainshowers_night" | "lightsleetshowers_night" | "rainshowers_night" | "sleetshowers_night")
-			echo "☔"
-			;;
-		"snow" | "lightsnow" | "heavysnow")
-			echo "❄ "
-			;;
-		"lightsnowshowers_day" | "lightsnowshowers_night" | "heavysnowshowers_day" | "heavysnowshowers_night" | "snowshowers_day" | "snowshowers_night")
-			echo "🌨 "
-			;;
-		"partlycloudy_day")
-			echo "⛅"
-			;;
-		"partlycloudy_night")
-			echo "🌗"
+			echo "Thunder"
 			;;
 		*)
 			echo "?"
