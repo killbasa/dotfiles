@@ -44,4 +44,3 @@ else
 	fi
 fi
 
-echo "Fish setup complete"

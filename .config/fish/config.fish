@@ -8,7 +8,7 @@ end
 
 if status is-interactive
 	# defined in local.fish
-	if test $DISABLE_TMUX_INIT -eq 0
+	if test $DISABLE_TMUX_INIT -eq 0 && test "$TERM_PROGRAM" != "vscode"
 
 		# check if tmux exists
 		# validate TERM

@@ -32,4 +32,6 @@ echo "✅ Dotfiles installed"
 echo
 echo "    Run the following to setup Fish:"
 echo "        ~/dotfiles/fish.sh"
+echo "    Run the following to setup tmux:"
+echo "        ~/dotfiles/tmux.sh"
 echo
