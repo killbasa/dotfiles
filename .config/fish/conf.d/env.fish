@@ -10,6 +10,8 @@ set -gx TERM "xterm-256color"
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
 set -gx LANGUAGE "en_US.UTF-8"
+set -gx PAGER less
+set -gx VISUAL code
 set -gx EDITOR (type -p nano)
 set -gx GPG_TTY (tty)
 
@@ -36,6 +38,8 @@ set -gx BAT_CONFIG_PATH "$DOTFILES_HOME/.config/bat.conf"
 set -gx RIPGREP_CONFIG_PATH "$DOTFILES_HOME/.config/ripgrep.conf"
 
 # linuxbrew
+set -gx HOMEBREW_NO_ANALYTICS 1
+
 if not contains /home/linuxbrew/.linuxbrew/bin $PATH
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end

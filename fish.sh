@@ -44,3 +44,10 @@ else
 	fi
 fi
 
+echo
+echo "To install fisher"
+echo
+echo "curl -sL https://git.io/fisher | source && \\"
+echo "    fisher install jorgebucaran/fisher && \\"
+echo "    fisher update"
+echo

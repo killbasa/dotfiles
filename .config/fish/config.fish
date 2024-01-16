@@ -1,5 +1,7 @@
 # Setup fish
 set fish_greeting
+set fisher_path $XDG_CONFIG_HOME/fisher
+source $XDG_CONFIG_HOME/fish/conf.d/fisher.fish
 
 # Setup starship
 if type -q starship
@@ -19,4 +21,3 @@ if status is-interactive
 		end
 	end
 end
-
