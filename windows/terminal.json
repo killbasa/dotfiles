@@ -24,6 +24,10 @@
 				"splitMode": "duplicate"
 			},
 			"keys": "alt+shift+d"
+		},
+		{
+			"command": "unbound",
+			"keys": "alt+enter"
 		}
 	],
 	"copyFormatting": "none",
@@ -44,9 +48,11 @@
 		"list": [
 			{
 				"colorScheme": "Campbell Powershell",
-				"commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+				"commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -nologo",
+				"elevate": false,
 				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
 				"hidden": false,
+				"icon": "ms-appx:///ProfileIcons/pwsh.png",
 				"name": "Windows PowerShell"
 			},
 			{
@@ -69,7 +75,7 @@
 					"light": "Vintage"
 				},
 				"guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-				"hidden": false,
+				"hidden": true,
 				"name": "Azure Cloud Shell",
 				"source": "Windows.Terminal.Azure"
 			},
@@ -80,6 +86,24 @@
 				"name": "Ubuntu 22.04.3 LTS",
 				"source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
 				"useAtlasEngine": true
+			},
+			{
+				"altGrAliasing": true,
+				"antialiasingMode": "grayscale",
+				"closeOnExit": "automatic",
+				"colorScheme": "Campbell Powershell",
+				"commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -nologo",
+				"cursorShape": "bar",
+				"elevate": true,
+				"guid": "{996c71bb-55a4-4af2-aae8-0c32ebd1714e}",
+				"hidden": false,
+				"historySize": 9001,
+				"icon": "ms-appx:///ProfileIcons/pwsh.png",
+				"name": "Windows PowerShell (Admin)",
+				"padding": "8, 8, 8, 8",
+				"snapOnInput": true,
+				"startingDirectory": "%USERPROFILE%",
+				"useAcrylic": false
 			}
 		]
 	},

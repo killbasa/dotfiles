@@ -8,8 +8,8 @@ for PACKAGE in $STOW_DIRS; do
 	mkdir -p "$TARGET/$PACKAGE"
 
 	if stow -R -d $HOME/dotfiles/.config -t "$TARGET/$PACKAGE" "$PACKAGE"; then
-		echo "Stowed $PACKAGE to $TARGET/$PACKAGE."
+		echo "Stowed $PACKAGE to $TARGET/$PACKAGE"
 	else
-		echo "✕ Failed to stow $PACKAGE to $TARGET/$PACKAGE."
+		echo "✕ Failed to stow $PACKAGE to $TARGET/$PACKAGE"
 	fi
 done

@@ -26,6 +26,7 @@ abbr --add pcat 'xargs bat'
 abbr --add pj 'cd ~/projects'
 abbr --add n 'nvim'
 abbr --add ws 'websocat'
+abbr --add hex 'hexyl'
 
 # Personal
 abbr --add kdo 'kb dotfiles open'

@@ -291,9 +291,6 @@ unbind M-T main
 #bind Sh-M-U "^[Oc^[[1;6D^T|sed 's/.*/\U&/'^M" main
 #bind Sh-M-L "^[Oc^[[1;6D^T|sed 's/.*/\L&/'^M" main
 
-## Disallow nano to be suspended (with ^Z by default).
-unset suspendable
-
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:

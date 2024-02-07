@@ -16,6 +16,8 @@ brew "fish"
 brew "fzf"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
+# Command-line hex viewer
+brew "hexyl"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf@3", link: true
 # Search tool like grep and The Silver Searcher
