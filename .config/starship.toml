@@ -18,7 +18,7 @@ $rust$package](fg:color_brand bg:color_3)\
 $line_break\
 $character"""
 
-add_newline = false
+add_newline = true
 
 ## Theme ##
 

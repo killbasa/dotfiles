@@ -20,3 +20,5 @@
 	fa 		= !git fetch --all
 	root 	= !git rev-parse --show-toplevel
 	visit 	= !git remote get-url origin | xargs -r open
+[rerere]
+	enabled = true
