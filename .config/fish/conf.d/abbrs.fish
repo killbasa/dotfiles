@@ -1,6 +1,6 @@
 # apt
-abbr --add au 'sudo apt full-upgrade'
 abbr --add upg 'sudo apt update && sudo apt upgrade'
+abbr --add bupg 'brew update && brew upgrade && brew cleanup'
 
 # git
 abbr --add g 'git'
@@ -18,6 +18,8 @@ abbr --add p 'pnpm'
 abbr --add y 'yarn'
 abbr --add yu 'yarn upgrade-interactive'
 abbr --add ydd 'yarn dedupe --strategy highest'
+abbr --add pu 'pnpm upgrade --latest --interactive'
+abbr --add pdd 'pnpm dedupe'
 
 # Misc
 abbr --add c 'clear'
