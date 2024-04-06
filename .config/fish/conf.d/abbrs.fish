@@ -19,6 +19,7 @@ abbr --add y 'yarn'
 abbr --add yu 'yarn upgrade-interactive'
 abbr --add ydd 'yarn dedupe --strategy highest'
 abbr --add pu 'pnpm upgrade --latest --interactive'
+abbr --add pu 'pnpm upgrade -r --latest --interactive'
 abbr --add pdd 'pnpm dedupe'
 
 # Misc
