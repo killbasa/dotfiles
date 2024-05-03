@@ -1,35 +1,37 @@
 # apt
-abbr --add upg 'sudo apt update && sudo apt upgrade'
-abbr --add bupg 'brew update && brew upgrade && brew cleanup'
+abbr --add upg	'sudo apt update && sudo apt upgrade'
+abbr --add bupg	'brew update && brew upgrade && brew cleanup'
 
 # git
 abbr --add g 'git'
 
 # Docker
-abbr --add d 'docker'
-abbr --add dc 'docker compose'
+abbr --add d	'docker'
+abbr --add dc	'docker compose'
 
 # Kubernetes
-abbr --add k 'kubectl'
+abbr --add k	'kubectl'
+abbr --add kns	'kubectl config set-context --current --namespace'
+abbr --add kctx	'kubectl config use-context'
 
 # Node
-abbr --add v 'volta'
-abbr --add p 'pnpm'
-abbr --add y 'yarn'
-abbr --add yu 'yarn upgrade-interactive'
-abbr --add ydd 'yarn dedupe --strategy highest'
-abbr --add pu 'pnpm upgrade --latest --interactive'
-abbr --add pur 'pnpm upgrade -r --latest --interactive'
-abbr --add pdd 'pnpm dedupe'
+abbr --add v	'volta'
+abbr --add p	'pnpm'
+abbr --add y	'yarn'
+abbr --add yu	'yarn upgrade-interactive'
+abbr --add ydd	'yarn dedupe --strategy highest'
+abbr --add pu	'pnpm upgrade --latest --interactive'
+abbr --add pur	'pnpm upgrade -r --latest --interactive'
+abbr --add pdd	'pnpm dedupe'
 
 # Misc
-abbr --add c 'clear'
-abbr --add cat 'bat'
-abbr --add pcat 'xargs bat'
-abbr --add pj 'cd ~/projects'
-abbr --add n 'nvim'
-abbr --add ws 'websocat'
-abbr --add hex 'hexyl'
+abbr --add c	'clear'
+abbr --add cat	'bat'
+abbr --add pcat	'xargs bat'
+abbr --add pj	'cd ~/projects'
+abbr --add n	'nvim'
+abbr --add ws	'websocat'
+abbr --add hex	'hexyl'
 
 # Personal
 abbr --add kdo 'kb dotfiles open'
