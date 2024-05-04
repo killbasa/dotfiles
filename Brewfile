@@ -2,12 +2,12 @@ tap "bufbuild/buf"
 tap "derailed/k9s"
 tap "go-task/tap"
 tap "homebrew/bundle"
-# GitOps Continuous Delivery for Kubernetes
-brew "argocd"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Tool for exploring each layer in a docker image
+brew "dive"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
