@@ -14,6 +14,8 @@ if type -q starship
 end
 
 if status is-interactive
+	atuin init --disable-up-arrow fish | source
+
 	# defined in local.fish
 	if test $DISABLE_TMUX_INIT -eq 0 && test "$TERM_PROGRAM" != "vscode"
 
@@ -26,3 +28,10 @@ if status is-interactive
 		end
 	end
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/shane/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

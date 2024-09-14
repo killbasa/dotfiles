@@ -14,10 +14,14 @@ brew "fd"
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Statically typed language for the Erlang VM
+brew "gleam"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Command-line hex viewer
 brew "hexyl"
+# Generate clients, server & docs from an OpenAPI spec (v2, v3)
+brew "openapi-generator"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf@3", link: true
 # Search tool like grep and The Silver Searcher
