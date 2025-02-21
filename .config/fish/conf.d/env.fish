@@ -27,6 +27,7 @@ set -gx TMUX_POWERLINE_THEME "super"
 # docker
 set -gx DOCKER_SCAN_SUGGEST false
 set -gx DOCKER_HIDE_LEGACY_COMMANDS 1
+set -gx COMPOSE_BAKE true
 
 # starship
 set -gx STARSHIP_CONFIG "$DOTFILES_HOME/.config/starship.toml"
