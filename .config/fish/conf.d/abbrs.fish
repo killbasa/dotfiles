@@ -23,6 +23,7 @@ abbr --add ydd	'yarn dedupe --strategy highest'
 abbr --add pu	'pnpm upgrade --latest --interactive'
 abbr --add pur	'pnpm upgrade -r --latest --interactive'
 abbr --add pdd	'pnpm dedupe'
+abbr --add nr	'npm run'
 
 # Misc
 abbr --add c	'clear'
