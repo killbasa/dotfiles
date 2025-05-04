@@ -1,3 +1,5 @@
+# Could move to symlinks
+
 function theme
 	set THEMES "super" "text"
 	set TARGET_THEME $argv[1]

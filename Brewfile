@@ -16,10 +16,10 @@ brew "fish"
 brew "fzf"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # Command-line hex viewer
 brew "hexyl"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
 # Generate clients, server & docs from an OpenAPI spec (v2, v3)
 brew "openapi-generator"
 # Protocol buffers (Google's data interchange format)

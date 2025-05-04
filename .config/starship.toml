@@ -13,6 +13,7 @@ $git_status\
 $dotnet\
 $golang\
 $nodejs\
+$python\
 $rust$package](fg:color_brand bg:color_3)\
 [](fg:color_3)\
 $line_break\
@@ -80,6 +81,10 @@ format = " $symbol$version "
 [rust]
 symbol = "rs "
 format = " $symbol$version "
+
+[python]
+symbol = "py "
+format = ' $symbol$pyenv_prefix$version (\($virtualenv\)) '
 
 [package]
 format = "\\($version\\) "
