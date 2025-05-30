@@ -28,7 +28,7 @@
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"editor.formatOnSave": true
 }
